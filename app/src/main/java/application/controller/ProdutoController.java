@@ -12,9 +12,9 @@ import application.model.ProdutoRepository;
 public class ProdutoController {
     @Autowired
     private ProdutoRepository produtoRepo;
-
+    @RequestMapping("/list")
     public String list(Model model){
-        model.addAttribute("Produtos", produtoRepo.findAll());
+        model.addAttribute("produtos", produtoRepo.findAll());
         return "/produto/list";
     }
 }
